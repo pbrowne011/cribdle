@@ -1,4 +1,4 @@
-from card import Card
+from .card import Card
 from collections import deque
 import random
 
@@ -96,6 +96,10 @@ class Hand:
 
     def __len__(self):
         return len(self.hand)
+
+    def __repr__(self):
+        return str(self.hand)
+        
 
     def __sub__(self, other):
         set_self = set(self.hand)

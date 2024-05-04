@@ -1,5 +1,5 @@
-from card import Card
-from deck import Deck, Hand
+from .card import Card
+from .deck import Deck, Hand
 from itertools import combinations, permutations
 import random
 
@@ -96,7 +96,7 @@ def get_best_hand(hand):
 def discard(hand):
     return get_best_hand(hand)
 
-def initialize():
+def init():
     is_easy = False
     deck = Deck()
                 
@@ -118,5 +118,5 @@ def initialize():
         "soln_opponent": soln_opponent
     }
     
-if __name__ == "__main__":
-    initialize()
+# if __name__ == "__main__":
+    # init()
