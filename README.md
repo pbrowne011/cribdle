@@ -37,9 +37,14 @@ will align, but it would be a cool feature to build.
 ### TODO
 
 - [ ] Change gameplay to discard style
-- [ ] Calculate expected value of a hand based on cards left in the deck
-- [ ] Change easy and hard modes to (show correct guess) and (show nothing)
-- [ ] Build flask app to play game over website (many subtasks here)
+- [x] Calculate expected value of a hand based on cards left in the deck
+- [ ] Build a simple Flask website to understand structure of app.py and routing
+- [ ] Build Flask website to display six playing cards
+- [ ] Build site where you can drag a playing card around
+- [ ] Build site where you guess a random number and check against the solution
+- [ ] Build site with bare-bones game logic (6 guesses, select cards, check if
+correct or incorrect)
+- [ ] Add easy and hard modes to (show correct guess) and (show nothing)
 - [ ] Use Vue.js to design the app (many subtasks here)
 
 ### Helpful links
@@ -49,3 +54,10 @@ courtesy of the [MEC](https://pi.math.cornell.edu/~mec/)
 - [Optimal Expected Values for Cribbage Hands](https://www.hmc.edu/wp-content/uploads/sites/49/2018/09/pmartin-2000-thesis.pdf),
 a thesis by Philip Martin from ~25 years ago attempting to answer the question:
 how advantageous is it to deal first in cribbage?
+- [Cribbage Classic](https://cribbageclassic.com/), comes with a tool where you
+can analyze discards against the expected value of every possible hand
+- [Cribbage Discard Pro](https://cliambrown.com/cribbage/), another discard
+analyzer that goes more in-depth (suggested (my implementation) vs. hail mary
+vs. aggressive hands)
+- [Cribbage Evaluator](https://cribassistant.github.io/sixcard_optimizer.html),
+another discard analyzer with a more difficult interface on a PC machine
