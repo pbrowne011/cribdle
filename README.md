@@ -15,6 +15,15 @@ To deactivate the virtual environment, run
 $ deactivate
 ```
 
+### Running Flask application
+
+To run the flask app, navigate to the `app` directory. Then run:
+```
+$ flask run
+```
+Because `app.py` is one of the default apps supported, this should work fine on
+the first try.
+
 ### Desired gameplay
 
 I have finally settled on a solution for the gameplay. The mimimum game that I
@@ -36,6 +45,20 @@ will align, but it would be a cool feature to build.
 
 ### TODO
 
+**Note 04-06-2024**: I am updating this to focus on learning enough JS, CSS, and
+HTML to get by. Once I do this, it will make building the Flask app much easier.
+For JS projects, see
+[this link](https://www.freecodecamp.org/news/javascript-projects-for-beginners/)
+
+- [ ] Watch [course](https://www.youtube.com/watch?v=PkZNo7MFNFg)
+- [ ] Build a color flipper
+- [ ] Build a counter
+- [ ] Build a review carousel
+- [ ] Build a grocery list
+- [ ] Build Lorem ipsum
+- [ ] Build Doodle jump
+
+---
 - [ ] Change gameplay to discard style
 - [x] Calculate expected value of a hand based on cards left in the deck
 - [ ] Build a simple Flask website to understand structure of app.py and routing
@@ -46,6 +69,24 @@ will align, but it would be a cool feature to build.
 correct or incorrect)
 - [ ] Add easy and hard modes to (show correct guess) and (show nothing)
 - [ ] Use Vue.js to design the app (many subtasks here)
+
+### Resources for Flask and Vue.js
+
+- [Flask quickstart](https://flask.palletsprojects.com/en/3.0.x/quickstart/),
+provides basic details on how to setup and use Flask
+- [flask-examples](https://github.com/helloflask/flask-examples/tree/master), a
+repository on GitHub with several examples of simple Flask apps; see also the
+parent resource [helloflask](https://helloflask.com/en/)
+- [flask-realworld-example-app](https://github.com/gothinkster/flask-realworld-example-app),
+the "official" example app using Flask by `gothinkster`, a production-grade
+example might look like this; could help with best practice and configuring
+the codebase
+- [conduit-flask](https://github.com/shivaylamba/conduit-flask), another "real-
+world" application of Flask
+- [Vue.js quickstart](https://vuejs.org/guide/essentials/application.html), the
+official quickstart guide for Vue 3
+- [Vue Mastery](https://www.vuemastery.com/courses/), a site with video courses
+for learning Vue.js (though YouTube + ChatGPT is likely better for this purpose)
 
 ### Helpful links
 
