@@ -1,91 +1,91 @@
 /* Base styles */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navigation styles */
 .nav {
-  background-color: #333;
-  padding: 10px;
+    background-color: #333;
+    padding: 10px;
 }
 
 .nav__link {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
 }
 
 .nav__link--active {
-  background-color: #555;
+    background-color: #555;
 }
 
 /* Main content styles */
 .main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 .game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Cribbage board styles */
 .cribbage-board-wrapper {
-  position: relative;
-  width: 300px;
-  height: 100px;
-  margin-bottom: 20px;
-  overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .cribbage-board {
-  width: 100px;
-  height: 300px;
-  transform: rotate(-90deg);
-  transform-origin: top left;
-  position: absolute;
-  top: 100px;
-  left: 0;
+    width: 100px;
+    height: 300px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    position: absolute;
+    top: 100px;
+    left: 0;
 }
 
 .cribbage-board__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hand-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
 }
 
 .card {
@@ -104,104 +104,111 @@ body {
 }
 
 .scoreboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .scoreboard-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .score-card {
-  width: 40px;
-  height: 56px;
-  margin: 0 5px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 40px;
+    height: 56px;
+    margin: 0 5px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .score-card.correct {
-  background-color: #4CAF50;
+    background-color: #4CAF50;  /* Green for correct */
 }
 
 .score-card.incorrect {
-  background-color: #f44336;
+    background-color: #f44336;  /* Red for incorrect */
+}
+
+.score-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Submit button styles */
 .submit-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .submit-btn:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 /* Responsive styles */
 @media screen and (max-width: 767px) {
-  .game-container {
-    max-width: 100%;
-  }
+    .game-container {
+        max-width: 100%;
+    }
 
-  .cribbage-board-wrapper {
-    width: 200px;
-    height: 70px;
-  }
+    .cribbage-board-wrapper {
+        width: 200px;
+        height: 70px;
+    }
 
-  .cribbage-board {
-    width: 70px;
-    height: 200px;
-  }
+    .cribbage-board {
+        width: 70px;
+        height: 200px;
+    }
 
-  .card {
-    width: 50px;
-    height: 70px;
-  }
+    .card {
+        width: 50px;
+        height: 70px;
+    }
 
-  .score-card {
-    width: 40px;
-    height: 60px;
-    font-size: 18px;
-  }
+    .score-card {
+        width: 40px;
+        height: 60px;
+        font-size: 18px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .game-container {
-    max-width: 700px;
-  }
+    .game-container {
+        max-width: 700px;
+    }
 
-  .card {
-    width: 60px;
-    height: 84px;
-  }
+    .card {
+        width: 60px;
+        height: 84px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-  body {
-    font-size: 18px;
-  }
+    body {
+        font-size: 18px;
+    }
 
-  .game-container {
-    max-width: 900px;
-  }
+    .game-container {
+        max-width: 900px;
+    }
 
-  .card {
-    width: 80px;
-    height: 112px;
-  }
+    .card {
+        width: 80px;
+        height: 112px;
+    }
 }
