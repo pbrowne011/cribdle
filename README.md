@@ -1,6 +1,24 @@
 # Cribdle
 
-A cribbage game based off of Wordle
+A cribbage game based off of Wordle. Play at [cribdle.com](cribdle.com)
+
+## How to play
+
+**TODO**: shorten and write good intro
+
+In a two player game of cribbage, each player receives six cards. They must
+choose to keep four and discard two, putting them in the crib of the player who
+dealt.
+
+In Cribdle, you are given a random hand and have to decide what to discard. Your
+opponent is receiving the crib, so you don't want to throw away good cards just
+to make your hand.
+
+When you select two cards to discard, you get either a green, yellow, or red
+background.
+- **Red**: both the cards you selected were wrong
+- **Yellow**: one of the cards you selected was wrong, and one was correct
+- **Green**: both cards are correct. You win!
 
 ### Setting up venv
 
@@ -47,30 +65,26 @@ will align, but it would be a cool feature to build.
 
 **Note 04-06-2024**: I am updating this to focus on learning enough JS, CSS, and
 HTML to get by. Once I do this, it will make building the Flask app much easier.
-For JS projects, see
-[this link](https://www.freecodecamp.org/news/javascript-projects-for-beginners/)
 
-- [x] Watch [course](https://www.youtube.com/watch?v=PkZNo7MFNFg)
-- [x] Build a color flipper
-- [x] Build a counter
-- [ ] Build a review carousel
-- [ ] Build a grocery list
-- [ ] Build Lorem ipsum
-- [ ] Build Doodle jump
+**Note 28-06-2024**: The first draft of the website is complete. It will require
+severe refactoring to achieve desired gameplay and functionality, but now I have
+something that Dad can play this week. I need to update this TODO list in a week
+or so.
 
 ---
-- [ ] Change gameplay to discard style
+- [x] Change gameplay to discard style
 - [x] Calculate expected value of a hand based on cards left in the deck
-- [ ] Build a simple Flask website to understand structure of app.py and routing
-- [ ] Build Flask website to display six playing cards
-- [ ] Build site where you can drag a playing card around
-- [ ] Build site where you guess a random number and check against the solution
-- [ ] Build site with bare-bones game logic (6 guesses, select cards, check if
+~~- [ ] Build a simple Flask website to understand structure of app.py and
+routing~~
+~~- [ ] Build Flask website to display six playing cards~~
+~~- [ ] Build site where you can drag a playing card around~~
+~~- [ ] Build site where you guess a random number and check against the solution~~
+- [x] Build site with bare-bones game logic (6 guesses, select cards, check if
 correct or incorrect)
-- [ ] Add easy and hard modes to (show correct guess) and (show nothing)
-- [ ] Use Vue.js to design the app (many subtasks here)
+~~- [ ] Add easy and hard modes to (show correct guess) and (show nothing)~~
+~~- [ ] Use Vue.js to design the app (many subtasks here)~~
 
-### Resources for Flask and Vue.js
+### Resources for Flask
 
 - [Flask quickstart](https://flask.palletsprojects.com/en/3.0.x/quickstart/),
 provides basic details on how to setup and use Flask
@@ -83,10 +97,6 @@ example might look like this; could help with best practice and configuring
 the codebase
 - [conduit-flask](https://github.com/shivaylamba/conduit-flask), another "real-
 world" application of Flask
-- [Vue.js quickstart](https://vuejs.org/guide/essentials/application.html), the
-official quickstart guide for Vue 3
-- [Vue Mastery](https://www.vuemastery.com/courses/), a site with video courses
-for learning Vue.js (though YouTube + ChatGPT is likely better for this purpose)
 
 ### Helpful links
 
