@@ -1,7 +1,11 @@
 from flask import Flask, render_template, jsonify
+import logging
 from src.init import init
 
 app = Flask(__name__, static_folder="static", static_url_path="/static")
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 @app.route("/")
 def index():
@@ -14,6 +18,7 @@ def about():
 @app.route("/api/game")
 def game_data():
     game_info = init()
+    logger.debug(f"API returning game data: {game_info}")
     return jsonify(game_info)
 
 if __name__ == "__main__":

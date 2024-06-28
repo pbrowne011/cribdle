@@ -7,13 +7,6 @@ suits = ["S", "H", "C", "D"]
 ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', 'T',
          'J', 'Q', 'K']
 
-# what is the logic of setup?
-#
-# needs parameter
-#   easy | hard
-#
-# then it does the following
-
 def score(hand, cut_card):
     hand.add(cut_card)
     len_hand = len(hand)
@@ -92,10 +85,7 @@ def get_best_hand(hand):
 
     return (max_ev, best_hand)
     
-# calculate cards to discard that maximize EV of hand
-def discard(hand):
-    return get_best_hand(hand)
-
+# jsonify card data
 def card_to_dict(card):
     return {
         "rank": card.get_rank(),
@@ -111,11 +101,12 @@ def init():
     deck.shuffle()
     player_hand = deck.deal(6)
     
-    ev_player, soln_player = discard(player_hand)
+    ev_player, soln_player = get_best_hand(player_hand)
     
     return {
         "player_hand": hand_to_list(player_hand),
-        "soln_player": hand_to_list(soln_player),
+        "best_hand": hand_to_list(soln_player),
+        "soln_player": hand_to_list(player_hand - soln_player),
         "max_ev": ev_player
     }
 
