@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Cribdle</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Cribdle</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- favicons -->
+  <link rel="shortcut icon" href="{{ url_for('static',
+                                  filename='img/favicon/favicon.ico') }}">
+  <!-- alternate favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',
+                                                     filename='img/favicon/apple-touch-icon.png')
+                                                     }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',
+                                                        filename='img/favicon/favicon-32x32.png')
+                                                        }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',
+                                                        filename='img/favicon/favicon-16x16.png')
+                                                        }}">
 </head>
 <body>
-    <nav class="nav">
-        <a href="/" class="nav__link">Game</a>
-        <a href="/about" class="nav__link nav__link--active">About</a>
-    </nav>
-    <main class="main">
-        <h1>About Cribdle</h1>
-        <p>Cribdle is a cribbage game based on Wordle. Players aim to maximize their expected value by selecting the best cards to discard.</p>
-        <h2>How to Play</h2>
-        <ol>
-            <li>You'll be given 6 cards in the first phase.</li>
-            <li>Choose 2 cards to discard that maximize your expected value.</li>
-            <li>In the second phase, you'll be given 5 cards and must discard 1.</li>
-            <li>You have a total of 6 guesses for both phases combined.</li>
-        </ol>
-    </main>
+  <nav class="nav">
+    <a href="/" class="nav__link">Game</a>
+    <a href="/about" class="nav__link nav__link--active">About</a>
+  </nav>
+  <main class="main">
+    <h1>About Cribdle</h1>
+    <p>Cribdle is a cribbage game based on Wordle. Players aim to maximize their expected value by selecting the best cards to discard.</p>
+    <h2>How to Play</h2>
+    <ol>
+      <li>You'll be given 6 cards in the first phase.</li>
+      <li>Choose 2 cards to discard that maximize your expected value.</li>
+      <li>In the second phase, you'll be given 5 cards and must discard 1.</li>
+      <li>You have a total of 6 guesses for both phases combined.</li>
+    </ol>
+  </main>
 </body>
 </html>
