@@ -8,6 +8,19 @@
                                }}">
   <link rel="preload" as="image" href="{{ url_for('static',
                                        filename='img/cribbage-board.svg') }}">
+  <!-- favicons -->
+  <link rel="shortcut icon" href="{{ url_for('static',
+                                  filename='img/favicon/favicon.ico') }}">
+  <!-- alternate favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',
+                                                     filename='img/favicon/apple-touch-icon.png')
+                                                     }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',
+                                                        filename='img/favicon/favicon-32x32.png')
+                                                        }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',
+                                                        filename='img/favicon/favicon-16x16.png')
+                                                        }}">
 </head>
 <body>
   <nav class="nav">
