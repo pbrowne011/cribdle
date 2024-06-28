@@ -26,13 +26,21 @@
   </nav>
   <main class="main">
     <h1>About Cribdle</h1>
-    <p>Cribdle is a cribbage game based on Wordle. Players aim to maximize their expected value by selecting the best cards to discard.</p>
+    <p>Cribdle is a cribbage game based on Wordle. Players aim to maximize their
+      expected point total by selecting the best cards to discard.</p>
     <h2>How to Play</h2>
     <ol>
-      <li>You'll be given 6 cards in the first phase.</li>
-      <li>Choose 2 cards to discard that maximize your expected value.</li>
-      <li>In the second phase, you'll be given 5 cards and must discard 1.</li>
-      <li>You have a total of 6 guesses for both phases combined.</li>
+      <li>You'll be given 6 cards by your opponent.</li>
+      <li>Choose 2 cards to discard that make the best hand.</li>
+      <li>When you submit, check your feedback.</li>
+      <ul style="list-style-type:disc;">
+        <li><b>Red:</b> both the cards you selected were wrong</li>
+        <li><b>Yellow:</b> one of the cards you selected was wrong. You don't know
+        which one.</li>
+        <li><b>Green:</b> both cards are correct. You win</li>
+      </ul>
+      <!--<li>In the second phase, you'll be given 5 cards and must discard 1.</li>
+      <li>You have a total of 6 guesses for both phases combined.</li>-->
     </ol>
   </main>
 </body>
