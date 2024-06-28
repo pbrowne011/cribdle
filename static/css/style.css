@@ -74,23 +74,27 @@ body {
 .cribbage-board__image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .hand-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    align-items: flex-end;
     position: fixed;
     bottom: 20px;
     left: 0;
     right: 0;
+    padding: 10px;
 }
 
 .card {
-    width: 70px;
-    height: 98px;
+    width: calc((100% - 60px) / 6); /* 60px accounts for margins (5px * 2 * 6) */
+    max-width: 70px; /* maximum width of a card */
+    min-width: 40px; /* minimum width of a card */
+    height: auto;
+    aspect-ratio: 2.5 / 3.5; /* maintain card aspect ratio */
     margin: 5px;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -146,9 +150,13 @@ body {
     object-fit: contain;
 }
 
-/* Submit button styles */
+/* Adjust submit button position */
 .submit-btn {
-    margin-top: 20px;
+    position: fixed;
+    bottom: calc(20px + 98px + 20px); /* 20px from bottom + card height + 20px gap */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
     padding: 10px 20px;
     font-size: 18px;
     background-color: #4CAF50;
@@ -156,6 +164,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
 }
 
 .submit-btn:disabled {
@@ -197,10 +206,11 @@ body {
         display: flex;
         flex-direction: column;
         height: 100vh;
+        position: relative;
     }
 
     .cribbage-board-wrapper {
-        width: 100%;
+        width: 80%;
         height: 15vh;
         overflow: hidden;
     }
@@ -209,6 +219,15 @@ body {
         width: 100%;
         height: 100%;
         transform: none;
+        position: static;
+    }
+
+    .cribbage-board__image--svg {
+        display: none;
+    }
+
+    .cribbage-board__image--png {
+        display: block !important;
     }
 
     .cribbage-board img {
@@ -218,9 +237,35 @@ body {
     }
 
     .scoreboard {
-        flex-grow: 1;
-        overflow-y: auto;
-        max-height: 50vh;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .scoreboard::before {
+        content: '';
+        position: absolute;
+        top: calc(10px); /* Adjust based on cribbage board height */
+        bottom: 10px; /* Adjust based on submit button position */
+        left: 50%;
+        width: 1px;
+        background-color: #ccc;
+        max-height: 80%;
+    }
+
+    .scoreboard-left,
+    .scoreboard-right {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+        padding: 0 5px;
+    }
+
+    .scoreboard-row {
+        margin-bottom: 5px;
     }
 
     .hand-container {
@@ -231,21 +276,34 @@ body {
         display: flex;
         justify-content: center;
         background: white;
-        padding: 10px;
+        padding: 5px;
     }
 
     .card {
-        width: 15%;
+        margin: 2px;
+        width: calc((100% - 30px) / 6);
+        min-width: 30px; /* smaller minimum width for very small screens */
+        max-width: 60px;
         height: auto;
+        aspect-ratio: 2.5 / 3.5;
+        margin: 2px;
+    }
+
+    .card.selected {
+        transform: translateY(-10px); /* Reduced from -20px */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Reduced shadow for less rise */
     }
 
     .submit-btn {
         position: fixed;
-        bottom: 100px;
+        bottom: calc(10px + 70px + 10px); /* Adjusted for smaller card size */
+        font-size: 14px;
+        padding: 8px 16px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
     }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -256,6 +314,31 @@ body {
     .card {
         width: 60px;
         height: 84px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .hand-container {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .submit-btn {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+    
+    .scoreboard {
+        flex-direction: column;
+    }
+
+    .scoreboard::before {
+        display: none;
+    }
+
+    .scoreboard-row {
+        margin-bottom: 10px;
     }
 }
 

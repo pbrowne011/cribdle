@@ -9,36 +9,53 @@ class UI {
 
     renderScoreboard() {
         const scoreboard = document.querySelector('.scoreboard');
-        const newRow = document.createElement('div');
-        newRow.className = 'scoreboard-row';
+        scoreboard.innerHTML = ''; // Clear existing content
 
-        const lastGuess = this.game.guesses[this.game.guesses.length - 1];
-        const correctCount = lastGuess.result.filter(r => r === 'correct').length;
-        
-        let rowClass;
-        if (correctCount === 2) {
-            rowClass = 'both-correct';
-        } else if (correctCount === 1) {
-            rowClass = 'one-correct';
-        } else {
-            rowClass = 'none-correct';
-        }
-        
-        newRow.classList.add(rowClass);
-        
-        lastGuess.cards.forEach((card, index) => {
-            const scoreCard = document.createElement('div');
-            scoreCard.className = 'score-card';
-            const cardImg = document.createElement('img');
-            cardImg.className = 'card';
-            cardImg.src = `/static/img/cards/${card.rank}${card.suit}.svg`;
-            scoreCard.appendChild(cardImg);
-            newRow.appendChild(scoreCard);
+        const leftSection = document.createElement('div');
+        leftSection.className = 'scoreboard-left';
+
+        const rightSection = document.createElement('div');
+        rightSection.className = 'scoreboard-right';
+
+        this.game.guesses.forEach((guess, index) => {
+            const newRow = document.createElement('div');
+            newRow.className = 'scoreboard-row';
+            
+            const correctCount = guess.result.filter(r => r === 'correct').length;
+            
+            let rowClass;
+            if (correctCount === 2) {
+                rowClass = 'both-correct';
+            } else if (correctCount === 1) {
+                rowClass = 'one-correct';
+            } else {
+                rowClass = 'none-correct';
+            }
+            
+            newRow.classList.add(rowClass);
+            
+            guess.cards.forEach(card => {
+                const scoreCard = document.createElement('div');
+                scoreCard.className = 'score-card';
+                const cardImg = document.createElement('img');
+                cardImg.className = 'card';
+                cardImg.src = `/static/img/cards/${card.rank}${card.suit}.svg`;
+                scoreCard.appendChild(cardImg);
+                newRow.appendChild(scoreCard);
+            });
+            
+            // Add to left section if it's one of the first 3 guesses, otherwise to right section
+            if (index < 3) {
+                leftSection.appendChild(newRow);
+            } else {
+                rightSection.appendChild(newRow);
+            }
         });
-        
-        scoreboard.appendChild(newRow);
-    }
 
+        scoreboard.appendChild(leftSection);
+        scoreboard.appendChild(rightSection);
+    }
+    
     onSubmit() {
         const result = this.game.submitGuess();
         if (result === 'gameOver') {

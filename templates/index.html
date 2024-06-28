@@ -31,15 +31,17 @@
     <div class="game-container">
       <div class="cribbage-board-wrapper">
         <div class="cribbage-board">
-          <img class="cribbage-board__image" src="{{ url_for('static',
-                                                  filename='img/cribbage-board.svg')
-                                                  }}" alt="Cribbage Board">
+          <img class="cribbage-board__image cribbage-board__image--svg" src="{{ url_for('static', filename='img/cribbage-board.svg') }}" alt="Cribbage Board">
+        <img class="cribbage-board__image cribbage-board__image--png" src="{{ url_for('static', filename='img/cribbage-board-mobile.png') }}" alt="Cribbage Board (Mobile)" style="display: none;">
         </div>
       </div>
-      <div class="scoreboard"></div>
-      <div class="hand-container"></div>
+      <div class="scoreboard">
+        <div class="scoreboard-left"></div>
+        <div class="scoreboard-right"></div>
+      </div>
       <button class="submit-btn" id="submit-btn" disabled>Submit</button>
     </div>
+    <div class="hand-container"></div>
   </main>
   <div id="endGamePopup" class="popup">
     <div class="popup-content">

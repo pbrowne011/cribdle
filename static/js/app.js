@@ -11,7 +11,8 @@ async function initializeGame() {
         
         const game = new Game(gameData);
         const ui = new UI(game);
-        
+
+        ui.renderScoreboard();
         game.renderHand();
     } catch (error) {
         console.error('Failed to initialize game:', error);
