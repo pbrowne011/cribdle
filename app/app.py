@@ -1,14 +1,20 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify
 from src.init import init
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="/static")
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/api/game")
+def game_data():
+    game_info = init()
+    return jsonify(game_info)
+
 if __name__ == "__main__":
     app.run(debug=True)
-    #s = init()
-    #print(str(s))
-    #return str(s)

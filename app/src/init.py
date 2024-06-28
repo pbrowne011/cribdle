@@ -96,27 +96,28 @@ def get_best_hand(hand):
 def discard(hand):
     return get_best_hand(hand)
 
+def card_to_dict(card):
+    return {
+        "rank": card.get_rank(),
+        "suit": card.get_suit(),
+        "value": card.get_value()
+    }
+
+def hand_to_list(hand):
+    return [card_to_dict(card) for card in hand]
+
 def init():
-    is_easy = False
     deck = Deck()
-                
     deck.shuffle()
     player_hand = deck.deal(6)
-    opponent_hand = deck.deal(6)
-    print("\nPlayer hand:", player_hand)
-    print("Opponent hand:", opponent_hand)
-
+    
     ev_player, soln_player = discard(player_hand)
-    ev_opponent, soln_opponent = discard(opponent_hand)
-    print("Player solution:", soln_player, ev_player)
-    print("Opponent solution:", soln_opponent, ev_opponent)
     
     return {
-        "player_hand": player_hand,
-        "opponent_hand": opponent_hand,
-        "soln_player": soln_player,
-        "soln_opponent": soln_opponent
+        "player_hand": hand_to_list(player_hand),
+        "soln_player": hand_to_list(soln_player),
+        "max_ev": ev_player
     }
-    
+
 # if __name__ == "__main__":
     # init()

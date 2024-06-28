@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Vue with Flask</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cribdle</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')
+                               }}">
+  <link rel="preload" as="image" href="{{ url_for('static',
+                                       filename='img/cribbage-board.svg') }}">
 </head>
 <body>
-    <div id="app">
-        <h1>{{ message }}</h1>
-        <input v-model="message" placeholder="Edit me">
+  <nav class="nav">
+    <a href="/" class="nav__link nav__link--active">Game</a>
+    <a href="/about" class="nav__link">About</a>
+  </nav>
+  <main class="main">
+    <div class="game-container">
+      <div class="cribbage-board-wrapper">
+        <div class="cribbage-board">
+          <img class="cribbage-board__image" src="{{ url_for('static',
+                                                  filename='img/cribbage-board.svg')
+                                                  }}" alt="Cribbage Board">
+        </div>
+      </div>
+      <div class="scoreboard"></div>
+      <div class="hand-container"></div>
+      <button class="submit-btn" id="submit-btn" disabled>Submit</button>
     </div>
-
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </main>
+  <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>

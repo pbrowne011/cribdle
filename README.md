@@ -50,9 +50,9 @@ HTML to get by. Once I do this, it will make building the Flask app much easier.
 For JS projects, see
 [this link](https://www.freecodecamp.org/news/javascript-projects-for-beginners/)
 
-- [ ] Watch [course](https://www.youtube.com/watch?v=PkZNo7MFNFg)
-- [ ] Build a color flipper
-- [ ] Build a counter
+- [x] Watch [course](https://www.youtube.com/watch?v=PkZNo7MFNFg)
+- [x] Build a color flipper
+- [x] Build a counter
 - [ ] Build a review carousel
 - [ ] Build a grocery list
 - [ ] Build Lorem ipsum
