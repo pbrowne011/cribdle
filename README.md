@@ -61,29 +61,6 @@ discard that again maximizes the expected value of your hand, but that also
 minimizes the value of your opponent's hand. I'm not sure how closely these
 will align, but it would be a cool feature to build.
 
-### TODO
-
-**Note 04-06-2024**: I am updating this to focus on learning enough JS, CSS, and
-HTML to get by. Once I do this, it will make building the Flask app much easier.
-
-**Note 28-06-2024**: The first draft of the website is complete. It will require
-severe refactoring to achieve desired gameplay and functionality, but now I have
-something that Dad can play this week. I need to update this TODO list in a week
-or so.
-
----
-- [x] Change gameplay to discard style
-- [x] Calculate expected value of a hand based on cards left in the deck
-~~- [ ] Build a simple Flask website to understand structure of app.py and
-routing~~
-~~- [ ] Build Flask website to display six playing cards~~
-~~- [ ] Build site where you can drag a playing card around~~
-~~- [ ] Build site where you guess a random number and check against the solution~~
-- [x] Build site with bare-bones game logic (6 guesses, select cards, check if
-correct or incorrect)
-~~- [ ] Add easy and hard modes to (show correct guess) and (show nothing)~~
-~~- [ ] Use Vue.js to design the app (many subtasks here)~~
-
 ### Resources for Flask
 
 - [Flask quickstart](https://flask.palletsprojects.com/en/3.0.x/quickstart/),
